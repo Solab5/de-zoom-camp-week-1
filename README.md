@@ -49,83 +49,55 @@ python upload_data.py \
 `docker-compose up` - to run pgadmin
 1. 
 ```
-SELECT 
-	COUNT(*) trips
-FROM 
-	green_taxi_data
-WHERE
-	lpep_pickup_datetime >= '2019-10-01'
-AND
-	lpep_pickup_datetime < '2019-11-01' 	
-AND 
-	trip_distance <= 1
+SELECT COUNT(*) AS up_to_1_mile
+FROM green_taxi_data
+WHERE lpep_dropoff_datetime >= '2019-10-01' 
+  AND lpep_dropoff_datetime < '2019-11-01'
+  AND trip_distance <= 1;
 ```
-`104830`
+`104802`
 2. 
 ```
-SELECT 
-	count(*) as trips
-FROM 
-	green_taxi_data
-WHERE
-	trip_distance > 1
-AND
-	trip_distance <= 3
-AND
-	lpep_pickup_datetime >= '2019-10-01'
-AND
-	lpep_pickup_datetime < '2019-11-01'
+SELECT COUNT(*) AS between_1_and_3_miles
+FROM green_taxi_data
+WHERE lpep_dropoff_datetime >= '2019-10-01' 
+  AND lpep_dropoff_datetime < '2019-11-01'
+  AND trip_distance > 1 
+  AND trip_distance <= 3;
 ```
-`198995`
+`198924`
 
 3. 
 ```
-SELECT 
-	count(*) as trips
-FROM 
-	green_taxi_data
-WHERE
-	trip_distance > 3
-AND
-	trip_distance <= 7
-AND
-	lpep_pickup_datetime >= '2019-10-01'
-AND
-	lpep_pickup_datetime < '2019-11-01'
+SELECT COUNT(*) AS between_3_and_7_miles
+FROM green_taxi_data
+WHERE lpep_dropoff_datetime >= '2019-10-01' 
+  AND lpep_dropoff_datetime < '2019-11-01'
+  AND trip_distance > 3 
+  AND trip_distance <= 7;
 ```
-`109642`
+`109603`
 
 4. 
 ```
-SELECT 
-	count(*) as trips
-FROM 
-	green_taxi_data
-WHERE
-	trip_distance > 7
-AND
-	trip_distance <= 10
-AND
-	lpep_pickup_datetime >= '2019-10-01'
-AND
-	lpep_pickup_datetime < '2019-11-01'
+SELECT COUNT(*) AS between_7_and_10_miles
+FROM green_taxi_data
+WHERE lpep_dropoff_datetime >= '2019-10-01' 
+  AND lpep_dropoff_datetime < '2019-11-01'
+  AND trip_distance > 7 
+  AND trip_distance <= 10;
 ```
-`27686`
+`27678`
 
 5. 
 ```
-SELECT 
-	count(*) as trips
-FROM 
-	green_taxi_data
-WHERE
-	trip_distance >= 10
-AND
-	lpep_pickup_datetime >= '2019-10-01'
-AND
-	lpep_pickup_datetime < '2019-11-01'
+SELECT COUNT(*) AS over_10_miles
+FROM green_taxi_data
+WHERE lpep_dropoff_datetime >= '2019-10-01' 
+  AND lpep_dropoff_datetime < '2019-11-01'
+  AND trip_distance > 10;
 ```
-`35293`
+`35189`
 
 ## Question 4
 ```
