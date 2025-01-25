@@ -47,6 +47,7 @@ python upload_data.py \
 
 ## Question 3: Trip Segmentation Count
 `docker-compose up` - to run pgadmin
+
 1. 
 ```
 SELECT COUNT(*) AS up_to_1_mile
@@ -56,6 +57,7 @@ WHERE lpep_dropoff_datetime >= '2019-10-01'
   AND trip_distance <= 1;
 ```
 `104802`
+
 2. 
 ```
 SELECT COUNT(*) AS between_1_and_3_miles
