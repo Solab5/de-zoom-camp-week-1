@@ -5,3 +5,8 @@
 *.gz
 ny_taxi_postgres_data
 *.backup
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.vscode/
